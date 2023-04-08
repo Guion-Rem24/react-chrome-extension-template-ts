@@ -36,13 +36,13 @@
     "lint": "prettier --write",
     "prebuild": "rm -rf dist",
     "build": "node scripts/build.js",
-    "compile": "tsc --noEmit",
+    "compile": "tsc --noEmit --project .",
     "dev": "yarn run prebuild && node scripts/webpack.js --mode development",
     "prerelease": "yarn run build",
     "release": "gh-pages -b release -d dist"
   },
   "lint-staged": {
-    "src/.{ts,tsx}": "yarn compile",
-    "src/.{js,ts,tsx}": "yarn lint"
+    "*.{ts,tsx}": "bash -c 'yarn compile'",
+    "*.{js,ts,tsx}": "yarn lint"
   }
 }
