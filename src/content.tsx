@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
-import './contnet.css';
+import './content.css';
 
 const Main = () => {
   return <div>App!!!!</div>;

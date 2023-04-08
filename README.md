@@ -18,5 +18,5 @@ $ yarn build
 ホットリロードは使うには、事前にビルドして、Chrome Extensionでdistフォルダを読み込む必要があります。
 
 ```
-$ yarn start
+$ yarn dev
 ```
