@@ -7,6 +7,15 @@ const CopyPlugin = require('copy-webpack-plugin');
 const env = require('./scripts/env');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const developmentTsOptions =
+  process.env.NODE_ENV === 'development'
+    ? {
+        compilerOptions: {
+          noImplicitAny: false,
+        },
+      }
+    : {};
+
 var options = {
   entry: {
     app: './src/index.tsx',
@@ -24,10 +33,16 @@ var options = {
       {
         test: /\.tsx?$/,
         loader: 'ts-loader',
+        options: {
+          ...developmentTsOptions,
+        },
       },
       {
         test: /\.ts?$/,
         loader: 'ts-loader',
+        options: {
+          ...developmentTsOptions,
+        },
       },
       {
         test: /\.html$/,

@@ -14,10 +14,14 @@
       "es6",
       "dom"
     ],
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "types": [
+      "chrome"
+    ]
   },
   "include": [
-    "./src/**/*"
+    "./src/**/*.ts",
+    "./src/**/*.tsx"
   ],
   "exclude": [
     "dist",
